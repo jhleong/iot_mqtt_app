@@ -1,0 +1,15 @@
+<resources>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_default_client_id">Android_ioT</string>
+    <string name="pref_default_server">192.168.20.93</string>
+    <string name="pref_default_port">1883</string>
+
+
+
+</resources>

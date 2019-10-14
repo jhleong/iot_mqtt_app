@@ -1,0 +1,110 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fullscreen_frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="#ff4c6dcc"
+    tools:context=".FullscreenActivity">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:weightSum="1">
+
+        <TextView android:id="@+id/fullscreen_temp_label" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:keepScreenOn="true" android:textColor="@android:color/darker_gray"
+            android:textStyle="normal" android:textSize="@dimen/abc_text_size_display_1_material" android:gravity="left"
+            android:text="Temperature"
+            android:layout_gravity="top"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="@dimen/abc_control_padding_material" />
+
+        <TextView android:id="@+id/fullscreen_temp" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:keepScreenOn="true" android:textColor="@android:color/holo_red_dark"
+            android:textStyle="normal" android:textSize="@dimen/abc_text_size_display_1_material" android:gravity="left"
+            android:text=" "
+            android:layout_gravity="top"
+            android:layout_marginLeft="@dimen/abc_control_padding_material" />
+
+        <TextView android:id="@+id/fullscreen_humidity_label" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:keepScreenOn="true" android:textColor="@android:color/darker_gray"
+            android:textStyle="normal" android:textSize="@dimen/abc_text_size_display_1_material" android:gravity="left"
+            android:text="Humidity"
+            android:layout_gravity="left|center_vertical"
+            android:textAlignment="gravity"
+            android:layout_marginLeft="@dimen/abc_control_padding_material" />
+
+        <TextView android:id="@+id/fullscreen_humidity" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:keepScreenOn="true" android:textColor="@android:color/holo_red_dark"
+            android:textStyle="normal" android:textSize="@dimen/abc_text_size_display_1_material" android:gravity="left"
+            android:text=" "
+            android:layout_gravity="left|center_vertical"
+            android:textAlignment="gravity"
+            android:layout_marginLeft="@dimen/abc_control_padding_material" />
+
+        <!--TextView android:id="@+id/fullscreen_relay_label" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:keepScreenOn="true" android:textColor="@android:color/darker_gray"
+            android:textStyle="normal" android:textSize="@dimen/abc_text_size_display_1_material" android:gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:text="Relay State"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="gravity"
+            android:layout_marginLeft="@dimen/abc_control_padding_material"
+            android:enabled="false" /-->
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:text="Relay Switch"
+            android:onClick="onSwitchRelay1Clicked"
+            android:id="@+id/fullscreen_relay_switch1"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView android:id="@+id/fullscreen_info" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:keepScreenOn="true"
+            android:textStyle="normal" android:textSize="@dimen/abc_text_size_headline_material"
+            android:text="info: "
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="@dimen/abc_control_padding_material"
+            android:gravity="left"
+            android:layout_marginTop="140dp"
+            android:textColor="@android:color/darker_gray" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/abc_control_padding_material"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text=""
+            android:id="@+id/textView_msg" />
+
+    </LinearLayout>
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:layout_gravity="left|center_vertical">
+
+        <LinearLayout android:id="@+id/fullscreen_content_controls" style="?metaButtonBarStyle"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@color/black_overlay" android:orientation="horizontal"
+            tools:ignore="UselessParent">
+
+            <Button android:id="@+id/setting_button" style="?metaButtonBarButtonStyle"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="@string/setting_button_label"
+                android:onClick="clickedSettings"
+                />
+
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</FrameLayout>
